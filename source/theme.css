@@ -22,3 +22,71 @@ Author: Big Cartel
   height: 80px;
   padding-top: 10px;
 }
+
+.product_detail .description {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: {{ theme.border_color }};
+}
+
+.product_detail .custom_description_extras {
+  padding-top: 15px;
+}
+
+#custom-size-guide-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+#custom-size-guide-modal-image {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 300px;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .custom-size-guide-modal-image {
+    width: 100%;
+  }
+}
+
+/* Add Animation - Zoom in the Modal */
+#custom-size-guide-modal-image {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+#custom-size-guide-modal-close {
+  position: absolute;
+  color: #000;
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+  top: 10px;
+  right: 35px;
+}
+
+#custom-size-guide-modal-close:hover,
+#custom-size-guide-modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

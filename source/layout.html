@@ -181,5 +181,50 @@
         Product.find('{{ product.permalink }}', processProduct)
       </script>
     {% endif %}
+
+    <!-- Custom Scripts -->
+    {% if page.full_url contains '/product/' %}
+      <!-- Size guide modal -->
+      <div id="custom-size-guide-modal">
+        <!-- Modal content -->
+        <div class="custom-size-guide-modal-content">
+          <span id="custom-size-guide-modal-close">&times;</span>
+          <img id="custom-size-guide-modal-image">
+        </div>
+      </div>
+      <!-- Size guide modal script -->
+      <script type="text/javascript">
+        // Get the modal
+        var modal = document.getElementById("custom-size-guide-modal");
+        var sizeGuideImg = document.getElementById("custom-size-guide-modal-image");
+        // Get the button that opens the modal
+        var sizeGuideManLink = document.getElementById("custom-size-guide-modal-man");
+        var sizeGuideLadyLink = document.getElementById("custom-size-guide-modal-lady");
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("custom-size-guide-modal-close");
+        // When the user clicks on the button, open the modal
+        sizeGuideManLink.onclick = function(event) {
+          event.preventDefault();
+          modal.style.display = "block";
+          sizeGuideImg.src = "https://www.fromfirstprincipals.com/store/man_size_guide.jpg";
+        }
+        sizeGuideLadyLink.onclick = function(event) {
+          event.preventDefault();
+        }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      </script>
+    {% endif %}
+
+    <!-- Mailchimp script -->
+    <script src="https://chimpstatic.com/mcjs-connected/js/users/36f4b0b47de14444bc76a2c25/12784586e0c08ec01f279f393.js"></script>
   </body>
 </html>
