@@ -18,3 +18,7 @@ Author: Big Cartel
 /*============================================================
   Custom Styles - add and override styles below.
 ============================================================*/
+.main header {
+  height: 80px;
+  padding-top: 10px;
+}
